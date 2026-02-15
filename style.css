@@ -7,3 +7,17 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+/* Sticky navbar styles */
+nav.nav-scrolled {
+  background-color: #C9B68A !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  margin-top: 0 !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+nav.nav-top {
+  background-color: transparent;
+  box-shadow: none;
+}

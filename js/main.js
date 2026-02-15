@@ -38,6 +38,11 @@ fetch("components/curated-selection.html")
       .forEach(el => el.innerHTML = data);
   });
 
+  fetch("components/next-step.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("next-step").innerHTML = data;
+  });
 
   // footer
 

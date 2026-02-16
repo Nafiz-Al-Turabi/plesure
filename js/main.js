@@ -43,10 +43,16 @@ fetch("components/curated-selection.html")
   .then(data => {
     document.getElementById("next-step").innerHTML = data;
   });
+
   fetch("components/pricing.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("pricing").innerHTML = data;
+  });
+  fetch("components/availability-by-city.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("availability-by-city").innerHTML = data;
   });
 
   // footer

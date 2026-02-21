@@ -103,23 +103,36 @@
 
   profiles.forEach((profile) => {
     const card = `
-      <div class="relative rounded-[18.15px] overflow-hidden">
-        <img
-          src="${profile.image}"
-          alt="${profile.name}"
-          class="w-full h-[210px] lg:h-[455px] object-cover"
-        />
-        <div
-          class="absolute w-full bottom-0 bg-gradient-to-t from-[#38383899] to-transparent backdrop-blur-[2px] lg:h-[156.08px] flex flex-col justify-end py-3 px-2 lg:px-4 lg:py-3 text-white"
-        >
-          <h3 class="text-center lg:text-left text-sm lg:text-[21px] font-medium leading-[14px] lg:leading-[110%] mb-2">
-            ${profile.name}
-          </h3>
-          <p class="hidden lg:block text-[15px] leading-[110%]">
-            ${profile.bio}
-          </p>
-        </div>
-      </div>
+          <div class="relative rounded-[18.15px] overflow-hidden">
+            <img
+              src="${profile.image}"
+              alt="${profile.name}"
+              class="w-full h-[210px] lg:h-[455px] object-cover"
+            />
+            <div
+              class="absolute bottom-0 w-full  lg:h-[156.8px] overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 backdrop-blur-[3px] [mask-image:linear-gradient(to_top,white_60%,transparent)]"
+              ></div>
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
+              ></div>
+
+              <div
+                class="relative flex flex-col justify-end h-full py-3 px-3 lg:px-[14.52px] text-white"
+              >
+                <h3
+                  class="text-center lg:text-left text-sm lg:text-[21px] font-medium lg:mb-[9.81px] leading-[110%]"
+                >
+                  ${profile.name}
+                </h3>
+
+                <p class="hidden lg:block text-[15px]">${profile.bio}</p>
+              </div>
+            </div>
+          </div>
     `;
 
     cardGrid.innerHTML += card;

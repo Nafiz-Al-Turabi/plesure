@@ -1,5 +1,3 @@
-
-
 .times-font {
   font-family: "Times New Roman", Times, serif;
 }
@@ -8,13 +6,13 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #E5DED4;
+  font-family: "Poppins", sans-serif;
+  background: #e5ded4;
 }
 
 /* Sticky navbar styles */
 nav.nav-scrolled {
-  background-color: #C9B68A !important;
+  background-color: #c9b68a !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   margin-top: 0 !important;
   padding-top: 1rem !important;
@@ -25,8 +23,17 @@ nav.nav-top {
   background-color: transparent;
   box-shadow: none;
 }
+.curated-card {
+  border-radius: 0 0 10.898px 10.898px;
+  background: linear-gradient(
+    181deg,
+    rgba(255, 255, 255, 0) 0.46%,
+    rgba(56, 56, 56, 0.6) 99.54%
+  );
+  backdrop-filter: blur(10.889589309692383px);
+}
 
 .card {
-    transition: opacity 0.4s ease;
-    cursor: pointer;
+  transition: opacity 0.4s ease;
+  cursor: pointer;
 }

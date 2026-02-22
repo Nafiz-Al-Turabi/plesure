@@ -33,8 +33,33 @@ nav.nav-top {
   backdrop-filter: blur(10.889589309692383px);
 }
 
-
 .card {
   transition: opacity 0.4s ease;
   cursor: pointer;
+}
+
+/* default state */
+#mobileStickyBtn {
+  transition: 
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    background-color 0.3s ease;
+}
+
+/* when sticky becomes active */
+.sticky-active {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background: #e5ded4;
+  padding: 17px 0;
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* when not sticky (hidden state) */
+#mobileStickyBtn:not(.sticky-active) {
+  opacity: 0;
+  transform: translateY(20px);
 }

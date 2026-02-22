@@ -138,3 +138,28 @@
     cardGrid.innerHTML += card;
   });
 })();
+
+
+  const section = document.getElementById("profileSection");
+  const button = document.getElementById("mobileStickyBtn");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // Only apply on mobile
+        if (window.innerWidth < 1024) {
+          if (entry.isIntersecting) {
+            button.classList.add("sticky-active");
+          } else {
+            button.classList.remove("sticky-active");
+          }
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0,
+    }
+  );
+
+  observer.observe(section);

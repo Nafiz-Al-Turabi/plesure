@@ -82,3 +82,4 @@ fetch("components/curated-selection.html")
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   });
+

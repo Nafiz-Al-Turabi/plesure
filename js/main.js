@@ -64,6 +64,10 @@ fetch("components/curated-selection.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("faq-section").innerHTML = data;
+
+    const script = document.createElement("script");
+    script.src = "js/faq-section.js";
+    document.body.appendChild(script);
   });
   
   fetch("components/writings-on-private.html")

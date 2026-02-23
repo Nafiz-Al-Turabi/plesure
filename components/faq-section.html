@@ -35,62 +35,83 @@
     </div>
     <!-- faq -->
     <div class="mt-8 lg:mt-0">
-      <div class="space-y-[9px] lg:space-y-4">
+      <div class="space-y-[9px] lg:space-y-4" data-faq-root>
         <!-- Item 1 -->
-        <div class="border border-black rounded-[15px] pt-5 pb-6 px-6">
-          <div class="flex justify-between items-center">
+        <div class="faq-item border border-black rounded-[15px] px-6 py-5 is-open" data-faq-item>
+          <button
+            class="faq-toggle w-full flex justify-between items-center gap-4 text-left cursor-pointer"
+            type="button"
+            aria-expanded="true"
+          >
             <h3 class="times-font text-xl lg:text-2xl leading-[150%]">
               How does availability work?
             </h3>
-            <button class="text-2xl font-light leading-none">
-              <i class="fa-solid fa-xmark text-[13px] lg:text-2xl"></i>
-            </button>
+            <span class="faq-icon" aria-hidden="true">
+              <span class="faq-icon-line faq-icon-line-horizontal"></span>
+              <span class="faq-icon-line faq-icon-line-vertical"></span>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p
+              class="pt-[11.61px] lg:pt-5 text-[15px] lg:text-xs text-gray-600 leading-relaxed"
+            >
+              Availability is managed by appointment and varies by city, date,
+              and individual schedules. Requests are reviewed carefully to
+              ensure alignment before confirmation.
+            </p>
           </div>
-          <p
-            class="mt-[11.61px] lg:mt-5 text-[15px] lg:text-xs text-gray-600 leading-relaxed"
-          >
-            Availability is managed by appointment and varies by city, date, and
-            individual schedules. Requests are reviewed carefully to ensure
-            alignment before confirmation.
-          </p>
         </div>
 
         <!-- Item 2 -->
-        <div class="border border-black rounded-[15px] pt-5 pb-6 px-6">
-          <div class="flex justify-between items-center">
+        <div class="faq-item border border-black rounded-[15px] px-6 py-5" data-faq-item>
+          <button
+            class="faq-toggle w-full flex justify-between items-center gap-4 text-left cursor-pointer"
+            type="button"
+            aria-expanded="false"
+          >
             <h3 class="times-font text-xl lg:text-2xl leading-[150%]">
               How far in advance should I enquire?
             </h3>
-            <button class="text-2xl font-light leading-none">
-              <i class="fa-solid fa-xmark text-[13px] lg:text-2xl"></i>
-            </button>
+            <span class="faq-icon" aria-hidden="true">
+              <span class="faq-icon-line faq-icon-line-horizontal"></span>
+              <span class="faq-icon-line faq-icon-line-vertical"></span>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p
+              class="pt-[11.61px] lg:pt-5 text-[15px] lg:text-xs text-gray-600 leading-relaxed"
+            >
+              Advance notice is recommended, particularly for evenings, travel,
+              or specific locations. Short-notice requests may be possible
+              depending on availability.
+            </p>
           </div>
-          <p
-            class="mt-[11.61px] lg:mt-5 text-[15px] lg:text-xs text-gray-600 leading-relaxed"
-          >
-            Advance notice is recommended, particularly for evenings, travel, or
-            specific locations. Short-notice requests may be possible depending
-            on availability.
-          </p>
         </div>
 
         <!-- Item 3 -->
-        <div class="border border-black rounded-[15px] pt-5 pb-6 px-6">
-          <div class="flex justify-between items-center">
+        <div class="faq-item border border-black rounded-[15px] px-6 py-5" data-faq-item>
+          <button
+            class="faq-toggle w-full flex justify-between items-center gap-4 text-left cursor-pointer"
+            type="button"
+            aria-expanded="false"
+          >
             <h3 class="times-font text-xl lg:text-2xl leading-[150%]">
               What information is required to make a request?
             </h3>
-            <button class="text-2xl font-light leading-none">
-              <i class="fa-solid fa-xmark text-[13px] lg:text-2xl"></i>
-            </button>
+            <span class="faq-icon" aria-hidden="true">
+              <span class="faq-icon-line faq-icon-line-horizontal"></span>
+              <span class="faq-icon-line faq-icon-line-vertical"></span>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p
+              class="pt-[11.61px] lg:pt-5 text-[15px] lg:text-xs text-gray-600 leading-relaxed"
+            >
+              A brief outline of timing, location, and preferences helps us
+              respond accurately. All details are handled privately and with
+              discretion.
+            </p>
           </div>
-          <p
-            class="mt-[11.61px] lg:mt-5 text-[15px] lg:text-xs text-gray-600 leading-relaxed"
-          >
-            A brief outline of timing, location, and preferences helps us
-            respond accurately. All details are handled privately and with
-            discretion.
-          </p>
         </div>
       </div>
     </div>

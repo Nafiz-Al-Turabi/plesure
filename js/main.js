@@ -36,6 +36,10 @@ fetch("components/curated-selection.html")
   .then(data => {
     document.querySelectorAll(".how-booking-works")
       .forEach(el => el.innerHTML = data);
+
+    const script = document.createElement("script");
+    script.src = "js/how-booking-works.js";
+    document.body.appendChild(script);
   });
 
   fetch("components/next-step.html")

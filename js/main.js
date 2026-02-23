@@ -1,10 +1,10 @@
-fetch("components/navbar.html")
+﻿fetch("components/navbar.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
     // Load nav.js after navbar is injected
     const script = document.createElement("script");
-    script.src = "/js/nav.js";
+    script.src = "js/nav.js";
     document.body.appendChild(script);
   });
   
@@ -20,7 +20,7 @@ fetch("components/curated-selection.html")
     document.getElementById("curated-selection").innerHTML = data;
 
     const script = document.createElement("script");
-    script.src = "/js/curated-selection.js";
+    script.src = "js/curated-selection.js";
     document.body.appendChild(script);
   });
   
@@ -82,4 +82,5 @@ fetch("components/curated-selection.html")
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   });
+
 

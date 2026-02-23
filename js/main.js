@@ -1,4 +1,8 @@
-﻿fetch("components/navbar.html")
+const rippleScript = document.createElement("script");
+rippleScript.src = "js/ripple.js";
+document.body.appendChild(rippleScript);
+
+fetch("components/navbar.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
@@ -7,13 +11,13 @@
     script.src = "js/nav.js";
     document.body.appendChild(script);
   });
-  
+
 fetch("components/hero.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("hero").innerHTML = data;
   });
-  
+
 fetch("components/curated-selection.html")
   .then(response => response.text())
   .then(data => {
@@ -23,15 +27,14 @@ fetch("components/curated-selection.html")
     script.src = "js/curated-selection.js";
     document.body.appendChild(script);
   });
-  
-  fetch("components/services.html")
+
+fetch("components/services.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("services").innerHTML = data;
   });
 
-
-  fetch("components/how-booking-works.html")
+fetch("components/how-booking-works.html")
   .then(response => response.text())
   .then(data => {
     document.querySelectorAll(".how-booking-works")
@@ -42,25 +45,25 @@ fetch("components/curated-selection.html")
     document.body.appendChild(script);
   });
 
-  fetch("components/next-step.html")
+fetch("components/next-step.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("next-step").innerHTML = data;
   });
 
-  fetch("components/pricing.html")
+fetch("components/pricing.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("pricing").innerHTML = data;
   });
 
-  fetch("components/trusted-section.html")
+fetch("components/trusted-section.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("trusted-section").innerHTML = data;
   });
 
-  fetch("components/faq-section.html")
+fetch("components/faq-section.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("faq-section").innerHTML = data;
@@ -69,26 +72,23 @@ fetch("components/curated-selection.html")
     script.src = "js/faq-section.js";
     document.body.appendChild(script);
   });
-  
-  fetch("components/writings-on-private.html")
+
+fetch("components/writings-on-private.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("writings-on-private").innerHTML = data;
   });
 
-    fetch("components/availability-by-city.html")
+fetch("components/availability-by-city.html")
   .then(response => response.text())
   .then(data => {
     document.querySelectorAll(".availability-by-city")
       .forEach(el => el.innerHTML = data);
   });
 
-  // footer
-
-  fetch("components/footer.html")
+// footer
+fetch("components/footer.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   });
-
-

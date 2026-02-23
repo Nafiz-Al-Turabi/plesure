@@ -103,3 +103,33 @@ nav.nav-top {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 /* FAQ accordion end */
+
+/* Global ripple button start */
+@media (max-width: 1023px) {
+  button:active {
+    opacity: 0.6;
+  }
+
+  .ripple-btn {
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.ripple-wave {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(255, 255, 255, 0.35);
+  animation: ripple-wave 0.55s ease-out forwards;
+}
+
+@keyframes ripple-wave {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+/* Global ripple button end */

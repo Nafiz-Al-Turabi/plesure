@@ -1,4 +1,5 @@
-﻿(() => {
+(() => {
+  const MOBILE_LIMIT = 6;
   const profiles = [
     {
       id: 1,
@@ -99,65 +100,94 @@
   ];
 
   const cardGrid = document.getElementById("cardGrid");
-  if (!cardGrid) return;
+  const section = document.getElementById("profileSection");
+  const stickyWrap = document.getElementById("mobileStickyBtn");
+  const showMoreButton = stickyWrap?.querySelector("button");
 
-  profiles.forEach((profile) => {
-    const card = `
-          <div class="relative rounded-[18.15px] overflow-hidden">
-            <img
-              src="${profile.image}"
-              alt="${profile.name}"
-              class="w-full h-[210px] lg:h-[455px] object-cover"
-            />
+  if (!cardGrid || !section || !stickyWrap || !showMoreButton) return;
+
+  const cardsMarkup = profiles
+    .map(
+      (profile, index) => `
+        <div class="curated-profile-card relative rounded-[18.15px] overflow-hidden" data-card-index="${index}">
+          <img
+            src="${profile.image}"
+            alt="${profile.name}"
+            class="w-full h-[210px] lg:h-[455px] object-cover"
+          />
+          <div class="absolute bottom-0 w-full lg:h-[156.8px] overflow-hidden">
             <div
-              class="absolute bottom-0 w-full  lg:h-[156.8px] overflow-hidden"
+              class="absolute inset-0 backdrop-blur-[3px] [mask-image:linear-gradient(to_top,white_60%,transparent)]"
+            ></div>
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
+            ></div>
+
+            <div
+              class="relative flex flex-col justify-end h-full py-3 px-3 lg:px-[14.52px] text-white"
             >
-              <div
-                class="absolute inset-0 backdrop-blur-[3px] [mask-image:linear-gradient(to_top,white_60%,transparent)]"
-              ></div>
-
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
-              ></div>
-
-              <div
-                class="relative flex flex-col justify-end h-full py-3 px-3 lg:px-[14.52px] text-white"
+              <h3
+                class="text-center lg:text-left text-sm lg:text-[21px] font-medium lg:mb-[9.81px] leading-[110%]"
               >
-                <h3
-                  class="text-center lg:text-left text-sm lg:text-[21px] font-medium lg:mb-[9.81px] leading-[110%]"
-                >
-                  ${profile.name}
-                </h3>
+                ${profile.name}
+              </h3>
 
-                <p class="hidden lg:block text-[15px] leading-[110%] tracking-[-0.305px]">${profile.bio}</p>
-              </div>
+              <p class="hidden lg:block text-[15px] leading-[110%] tracking-[-0.305px]">${profile.bio}</p>
             </div>
           </div>
-    `;
+        </div>
+      `,
+    )
+    .join("");
 
-    cardGrid.innerHTML += card;
-  });
-})();
+  cardGrid.innerHTML = cardsMarkup;
 
-const section = document.getElementById("profileSection");
-const button = document.getElementById("mobileStickyBtn");
+  const cards = Array.from(cardGrid.querySelectorAll(".curated-profile-card"));
+  let isExpanded = false;
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (window.innerWidth < 1024) {
-        if (entry.isIntersecting) {
-          button.classList.add("sticky-active");
-        } else {
-          button.classList.remove("sticky-active");
-        }
-      }
+  const applyMobileCardLimit = () => {
+    const isMobile = window.innerWidth < 1024;
+
+    cards.forEach((card, index) => {
+      const shouldHide = isMobile && !isExpanded && index >= MOBILE_LIMIT;
+      card.style.display = shouldHide ? "none" : "";
     });
-  },
-  {
-    root: null,
-    threshold: 0,
-  },
-);
 
-observer.observe(section);
+    if (isMobile && !isExpanded) {
+      stickyWrap.style.display = "";
+    } else {
+      stickyWrap.style.display = "none";
+      stickyWrap.classList.remove("sticky-active");
+    }
+  };
+
+  showMoreButton.addEventListener("click", () => {
+    isExpanded = true;
+    applyMobileCardLimit();
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (window.innerWidth < 1024 && !isExpanded) {
+          if (entry.isIntersecting) {
+            stickyWrap.classList.add("sticky-active");
+          } else {
+            stickyWrap.classList.remove("sticky-active");
+          }
+        } else {
+          stickyWrap.classList.remove("sticky-active");
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0,
+    },
+  );
+
+  observer.observe(section);
+  applyMobileCardLimit();
+  window.addEventListener("resize", applyMobileCardLimit);
+})();

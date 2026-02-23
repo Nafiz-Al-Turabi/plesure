@@ -6,13 +6,13 @@ const navbar = document.querySelector("nav");
 const body = document.body;
 
 function openMenu() {
-  mobileMenu.classList.remove("-translate-x-full");
+  mobileMenu.classList.remove("-translate-x-[101%]");
   overlay.classList.remove("hidden");
   body.classList.add("overflow-hidden"); 
 }
 
 function closeMenu() {
-  mobileMenu.classList.add("-translate-x-full");
+  mobileMenu.classList.add("-translate-x-[101%]");
   overlay.classList.add("hidden");
   body.classList.remove("overflow-hidden");
 }

@@ -1,5 +1,5 @@
 (() => {
-  const MOBILE_LIMIT = 6;
+  const MOBILE_LIMIT = 8;
   const profiles = [
     {
       id: 1,

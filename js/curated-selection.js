@@ -100,11 +100,10 @@
   ];
 
   const cardGrid = document.getElementById("cardGrid");
-  const section = document.getElementById("profileSection");
-  const stickyWrap = document.getElementById("mobileStickyBtn");
-  const showMoreButton = stickyWrap?.querySelector("button");
+  const mobileButtonWrap = document.getElementById("mobileStickyBtn");
+  const showMoreButton = mobileButtonWrap?.querySelector("button");
 
-  if (!cardGrid || !section || !stickyWrap || !showMoreButton) return;
+  if (!cardGrid || !mobileButtonWrap || !showMoreButton) return;
 
   const cardsMarkup = profiles
     .map(
@@ -155,10 +154,9 @@
     });
 
     if (isMobile && !isExpanded) {
-      stickyWrap.style.display = "";
+      mobileButtonWrap.style.display = "";
     } else {
-      stickyWrap.style.display = "none";
-      stickyWrap.classList.remove("sticky-active");
+      mobileButtonWrap.style.display = "none";
     }
   };
 
@@ -167,27 +165,6 @@
     applyMobileCardLimit();
   });
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (window.innerWidth < 1024 && !isExpanded) {
-          if (entry.isIntersecting) {
-            stickyWrap.classList.add("sticky-active");
-          } else {
-            stickyWrap.classList.remove("sticky-active");
-          }
-        } else {
-          stickyWrap.classList.remove("sticky-active");
-        }
-      });
-    },
-    {
-      root: null,
-      threshold: 0,
-    },
-  );
-
-  observer.observe(section);
   applyMobileCardLimit();
   window.addEventListener("resize", applyMobileCardLimit);
 })();

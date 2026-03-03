@@ -156,33 +156,6 @@ nav.nav-top {
   cursor: pointer;
 }
 
-/* Cureted sction mobile sticky btn start */
-.mobile-sticky-target {
-  transition: 
-    opacity 0.35s ease,
-    transform 0.35s ease,
-    background-color 0.3s ease;
-}
-
-@media (max-width: 1023px) {
-  .sticky-active {
-    position: sticky;
-    bottom: 0;
-    width: 100%;
-    background: #e5ded4;
-    padding: 17px 0;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .mobile-sticky-target:not(.sticky-active) {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-}
-/* Cureted mobile sticky btn end   */
-
 /* FAQ accordion start */
 .faq-answer {
   max-height: 0;

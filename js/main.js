@@ -3,8 +3,8 @@ rippleScript.src = "js/ripple.js";
 document.body.appendChild(rippleScript);
 
 fetch("components/navbar.html")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     document.getElementById("navbar").innerHTML = data;
     // Load nav.js after navbar is injected
     const script = document.createElement("script");
@@ -12,15 +12,26 @@ fetch("components/navbar.html")
     document.body.appendChild(script);
   });
 
+fetch("components/city-hero.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("city-hero").innerHTML = data;
+  });
+fetch("components/why-amsterdam.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("why-amsterdam").innerHTML = data;
+  });
+
 fetch("components/hero.html")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     document.getElementById("hero").innerHTML = data;
   });
 
 fetch("components/curated-selection.html")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     document.getElementById("curated-selection").innerHTML = data;
 
     const script = document.createElement("script");
@@ -29,39 +40,40 @@ fetch("components/curated-selection.html")
   });
 
 fetch("components/services.html")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     document.getElementById("services").innerHTML = data;
   });
 
 fetch("components/how-booking-works.html")
-  .then(response => response.text())
-  .then(data => {
-    document.querySelectorAll(".how-booking-works")
-      .forEach(el => el.innerHTML = data);
+  .then((response) => response.text())
+  .then((data) => {
+    document
+      .querySelectorAll(".how-booking-works")
+      .forEach((el) => (el.innerHTML = data));
   });
 
 fetch("components/next-step.html")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     document.getElementById("next-step").innerHTML = data;
   });
 
 fetch("components/pricing.html")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     document.getElementById("pricing").innerHTML = data;
   });
 
 fetch("components/trusted-section.html")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     document.getElementById("trusted-section").innerHTML = data;
   });
 
 fetch("components/faq-section.html")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     document.getElementById("faq-section").innerHTML = data;
 
     const script = document.createElement("script");
@@ -70,21 +82,22 @@ fetch("components/faq-section.html")
   });
 
 fetch("components/writings-on-private.html")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     document.getElementById("writings-on-private").innerHTML = data;
   });
 
 fetch("components/availability-by-city.html")
-  .then(response => response.text())
-  .then(data => {
-    document.querySelectorAll(".availability-by-city")
-      .forEach(el => el.innerHTML = data);
+  .then((response) => response.text())
+  .then((data) => {
+    document
+      .querySelectorAll(".availability-by-city")
+      .forEach((el) => (el.innerHTML = data));
   });
 
 // footer
 fetch("components/footer.html")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     document.getElementById("footer").innerHTML = data;
   });

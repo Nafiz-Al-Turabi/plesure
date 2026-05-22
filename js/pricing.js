@@ -39,3 +39,8 @@ fetch("../components/pricing/base-rates.html")
   .then((data) => {
     document.getElementById("base-rates").innerHTML = data;
   });
+fetch("../components/pricing/service-specific-guidelines.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("service-specific-guidelines").innerHTML = data;
+  });

@@ -44,3 +44,8 @@ fetch("../components/pricing/service-specific-guidelines.html")
   .then((data) => {
     document.getElementById("service-specific-guidelines").innerHTML = data;
   });
+fetch("../components/pricing/what-is-included.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("what-is-included").innerHTML = data;
+  });

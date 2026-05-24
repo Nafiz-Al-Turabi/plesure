@@ -54,3 +54,8 @@ fetch("../components/pricing/payment-direction.html")
   .then((data) => {
     document.getElementById("payment-direction").innerHTML = data;
   });
+fetch("../components/pricing/availability-by-city.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("availability-by-city").innerHTML = data;
+  });

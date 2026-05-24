@@ -49,3 +49,8 @@ fetch("../components/pricing/what-is-included.html")
   .then((data) => {
     document.getElementById("what-is-included").innerHTML = data;
   });
+fetch("../components/pricing/payment-direction.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("payment-direction").innerHTML = data;
+  });
